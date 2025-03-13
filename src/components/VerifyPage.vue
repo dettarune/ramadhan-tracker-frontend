@@ -61,11 +61,11 @@ export default {
             this.error = false;
 
             try {
-                const baseURL = "http://localhost:3000";
+                const baseURL = "https://nations-idea-preserve-textbook.trycloudflare.com";
                 const response = await axios.post(
                     `${baseURL}/api/users/verify`, 
                     { token: this.verificationData.token }, 
-                    { headers: { 'Content-Type': 'application/json' }}
+                    { headers: { 'Content-Type': 'application/json' }, withCredentials:true}
                 );
 
                 if (response.data.message === "Login Success!") {
